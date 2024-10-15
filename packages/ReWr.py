@@ -44,6 +44,7 @@ class READ_AND_WRITE:
         output  = 'output'
         outputPath = os.path.join(output, fileName)
 
+        #En caso de ser la primera ejecucion o no tener la carpeta, se crea la carpeta output
         if not os.path.exists(output):
             os.makedirs(output)
 
