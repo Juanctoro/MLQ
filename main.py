@@ -14,7 +14,6 @@ readFile = READ_AND_WRITE()
 
 for file in filenames:
     matrixInstruction = readFile.read(file)
-    print(file)
 
     #Se le asignan los procesos a cada fila
     queue0, queue1, queue2 = readFile.assignProcesses(matrixInstruction)
@@ -30,7 +29,6 @@ for file in filenames:
         (queue1, rr2),  # Cola 1 con RR(5)
         (queue2, fcfs), # Cola 2 con FCFS
     ]
-    print(queues)
 
     #Se crea el objeto MLQ y se ejecuta, tambien se crean los archivos de salida
     mlq = MLQ(queues)

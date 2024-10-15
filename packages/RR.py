@@ -11,12 +11,14 @@ class RR:
         self.matrixStats = [None for _ in range(len(self.instruction))]
         rt = {}
         remainingTime = {} 
-        for i in self.instruction:
 
+        for i in self.instruction:
             remainingTime[i[0]] = int(i[1])
             rt[i[0]] = -1
+
         processCompleted = 0
         queue = self.instruction.copy()
+
         while processCompleted < len(self.instruction):
             for i in range(len(queue)):
                 if i < len(queue):
@@ -30,6 +32,7 @@ class RR:
                     if remainingTime[currentProcess[0]] > self.quantum:
                         remainingTime[currentProcess[0]] -= self.quantum
                         self.time += self.quantum
+
                     else:
                         self.time += remainingTime[currentProcess[0]]
                         remainingTime[currentProcess[0]] = 0
@@ -44,6 +47,7 @@ class RR:
                         
                         indice = self.instruction.index(currentProcess)
                         self.matrixStats[indice] = tempMatrix
+                        
                 for j in queue:
                     if remainingTime[j[0]] == 0:
                         queue.remove(j)

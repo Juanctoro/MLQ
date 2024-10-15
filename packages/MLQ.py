@@ -12,6 +12,7 @@ class MLQ:
     def execute(self):
         self.stats = []
         first = True
+        
         for queue in self.queues:
             #Primera ejecucion, tiempo de la cpu = 0
             if first:
@@ -22,6 +23,7 @@ class MLQ:
                 for i in statsTemp:
                     self.stats.append(i)
                 first = False
+
             #Siguente ejecucion, tiempo de la cpu se calcual donde termino la anterior
             else:
                 
@@ -33,6 +35,7 @@ class MLQ:
                 algorithm = queue[1] 
                 algorithm.execute(processes, lastTime)
                 statsTemp = algorithm.getStats()
+
                 for i in statsTemp:
                     self.stats.append(i)
 

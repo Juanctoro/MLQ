@@ -1,17 +1,16 @@
-class STCF:
-
-    waitProcess = []
-    time = 0 
+class STCF: 
 
     def __init__(self) -> None:
         pass
 
     def execute(self, instructions, ct):
-        self.time = ct
+        self.time  = ct
+        waitProcess = []
         self.instructions = instructions
         self.matrixStats = [None for _ in range(len(self.instructions))]
         rt = {}
         remainingTime = {} 
+
         for i in self.instructions:
             remainingTime[i[0]] = int(i[1])
             rt[i[0]] = -1
@@ -19,6 +18,7 @@ class STCF:
         
         while processCompleted < len(self.instructions):
             waitProcess = []
+
             for i in self.instructions:
                 if int(i[2]) <= self.time and remainingTime[i[0]] > 0:
                     waitProcess.append(i)
