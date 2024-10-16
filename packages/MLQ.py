@@ -28,8 +28,7 @@ class MLQ:
             else:
                 
                 #Ultimo tiempo de la cpu
-                lastStat = self.stats[-1]
-                lastTime = lastStat[1]
+                lastTime = max(fila[1] for fila in self.stats)
 
                 processes = queue[0]
                 algorithm = queue[1] 
