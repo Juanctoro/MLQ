@@ -7,7 +7,7 @@ from packages.ReWr import READ_AND_WRITE
 import os
 import glob
 
-#Todos los archivos de texto que se encunetren en la carpeta se leeran y ejecutaran en el MLQ
+#Todos los archivos de texto que se encuentren en la carpeta se leeran y ejecutaran en el MLQ
 dirFile = '/home/juantoro/SO/text'
 filenames = glob.glob(os.path.join(dirFile, "*.txt"))
 readFile = READ_AND_WRITE()

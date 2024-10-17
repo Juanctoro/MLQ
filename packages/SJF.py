@@ -19,7 +19,7 @@ class SJF:
                 wt = self.ct - int(instruction[2])
                 self.ct = self.ct + int(instruction[1])
                 tat = self.ct - int(instruction[2])
-                tempMatrix = [tat, wt, self.ct, rt]
+                tempMatrix = [wt, self.ct, rt, tat]
                 self.matrixStats.append(tempMatrix)
                 first = False
             
